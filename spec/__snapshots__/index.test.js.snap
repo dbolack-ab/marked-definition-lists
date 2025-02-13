@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Multiline Definition Lists Block Token cannot be the Term of a multi-line definition 1`] = `
+"<h2>Header</h2>
+<dl><dt></dt><dd>Definition 1 of a single-line DL</dd>
+<dt></dt><dd>Definition 1 of another single-line DL</dd>
+</dl>"
+`;
+
+exports[`Multiline Definition Lists Inline DL has priority over Multiline 1`] = `
+"<dl><dt>Term 1</dt><dd>Inline definition 1</dd>
+<dt></dt><dd>Inline definition 2 (no DT)</dd>
+</dl>"
+`;
+
+exports[`Multiline Definition Lists Multiline Definition List must have at least one non-newline character after :: 1`] = `
+"<p>Term 1</p>
+<dl><dt></dt><dd></dd>
+</dl><p>Definition 1</p>
+"
+`;
+
+exports[`Multiline Definition Lists Multiline Definition Term must have at least one non-empty Definition 1`] = `
+"<p>Term 1</p>
+<dl><dt></dt><dd></dd>
+</dl>"
+`;
+
+exports[`Multiline Definition Lists Multiple Term, Plural Definitions 1`] = `
+"<dl><dt>Term 1</dt>
+<dd>Definition 1</dd>
+<dd>Definition 2</dd>
+<dt>Term 2</dt>
+<dd>Definition 1</dd>
+<dd>Definition 2</dd></dl>"
+`;
+
+exports[`Multiline Definition Lists Multiple Term, Single Definitions 1`] = `
+"<dl><dt>Term 1</dt>
+<dd>Definition 1</dd>
+<dt>Term 2</dt>
+<dd>Definition 1</dd></dl>"
+`;
+
+exports[`Multiline Definition Lists Multiple Term, Single multi-line definition 1`] = `
+"<dl><dt>Term 1</dt>
+<dd>Definition 1 and more and more</dd>
+<dt>Term 2</dt>
+<dd>Definition 1</dd>
+<dd>Definition 2</dd></dl>"
+`;
+
+exports[`Multiline Definition Lists Multiple Term, Single multi-line definition, followed by an inline dl 1`] = `
+"<dl><dt>Term 1</dt>
+<dd>Definition 1 and more and more</dd>
+<dt>Term 2</dt>
+<dd>Definition 1</dd>
+<dd>Definition 2</dd></dl><dl><dt></dt><dd>Inline Definition (no term)</dd>
+</dl>"
+`;
+
+exports[`Multiline Definition Lists Multiple Term, Single multi-line definition, followed by paragraph 1`] = `
+"<dl><dt>Term 1</dt>
+<dd>Definition 1 and more and more</dd>
+<dt>Term 2</dt>
+<dd>Definition 1</dd>
+<dd>Definition 2</dd></dl><p>Paragraph</p>
+"
+`;
+
+exports[`Multiline Definition Lists Single Term, Plural Definitions 1`] = `
+"<dl><dt>Term 1</dt>
+<dd>Definition 1</dd>
+<dd>Definition 2</dd></dl>"
+`;
+
+exports[`Multiline Definition Lists Single Term, Plural multi-line definitions 1`] = `
+"<dl><dt>Term 1</dt>
+<dd>Definition 1 and more and more</dd>
+<dd>Definition 2 and more and more</dd>
+<dd>Definition 3</dd></dl>"
+`;
+
+exports[`Multiline Definition Lists Single Term, Single Definition 1`] = `
+"<dl><dt>Term 1</dt>
+<dd>Definition 1</dd></dl>"
+`;
+
+exports[`Multiline Definition Lists Single Term, Single multi-line definition 1`] = `
+"<dl><dt>Term 1</dt>
+<dd>Definition 1 and more and more and more</dd></dl>"
+`;
+
+exports[`Single Line Definition Lists Multiple Definition Terms 1`] = `
+"<dl><dt>Term 1</dt><dd>Definition of Term 1</dd>
+<dt>Term 2</dt><dd>Definition of Term 2</dd>
+</dl>"
+`;
+
+exports[`Single Line Definition Lists Single Definition Term 1`] = `
+"<dl><dt>My term</dt><dd>My First Definition</dd>
+</dl>"
+`;
