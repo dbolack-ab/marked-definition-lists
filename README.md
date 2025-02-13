@@ -1,19 +1,67 @@
-# marked-nonbreaking-spaces
+# marked-definition-lists
 
-Insert any number of `&nbsp;` non-breaking spaces into the document.
+This module provides two styles of definition lists for use with marked.js
 
-The basic token is `:>`. Additional spaces may be added by adding additional greater-than (`>`) to the sequence. `:>>>` would result in `&nbsp;&nbsp;&nbsp;`. This token may be used inside a block.
+## Inline Lists
+
+Inline lists build each term and definition as a single line. A term is not required. Multiple lines will be placed in the same dictionary list ( `<dl>`).
+
+```
+My term :: My First Definition
+```
+
+## PANdoc style lists
+
+PANdoc style lists place the Term on the first line, follows by a series of definitions, preceded by `::` until a blank line is reached. Text not preceeded by `::` but before a blank line will be concatenated with the previous definition entry. Multiple Term and definistion set combinations will be placed in the same
+
+### Single Term, Single Definition
+
+1Term 1
+::1Definition 1
+
+
+### Single Term, Plural Definitions
+2Term 1
+::2Definition 1
+::2Definition 2
+
+
+### Multiple Term, Single Definitions
+3Term 1
+::4Definition 1
+
+3Term 2
+::3Definition 1
+
+
+### Multiple Term, Plural Definitions
+
+4Term 1
+::41Definition 1
+::41Definition 2
+
+4Term 2
+::42Definition 1
+::42Definition 2
+
+
+### Single Term, Single multiple line definition
+
+5Term 1
+::5Definition 1
+and more and
+more and more
 
 # Usage
 <!-- Show most examples of how to use this extension -->
 
 ```js
 const marked = require("marked");
-const markedNonbreakingSpaces = require("marked-nonbreaking-spaces");
+const markedDefinitionLists = require("marked-definition-lists");
 
-marked.use({ extensions: [markedNonbreakingSpaces] });
+marked.use({ extensions: [markedDefinitionLists] });
 
-const html = marked.parse(":> This is a single space.\nThis adds :>>>> four!");
+const html = marked.parse("My term :: My First Definition");
 console.log(html);
-// <p>&nbsp; This is a single space.\nThis adds &nbsp;&nbsp;&nbsp;&nbsp; four!</p>
+// <dl><dt>My term</dt><dd>My First Definition</dd></dl>
 ```
