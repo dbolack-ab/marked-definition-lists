@@ -59,7 +59,7 @@ more and more
 const marked = require("marked");
 const markedDefinitionLists = require("marked-definition-lists");
 
-marked.use({ extensions: [markedDefinitionLists] });
+marked.use(markedDefinitionLists());
 
 const html = marked.parse("My term :: My First Definition");
 console.log(html);
